@@ -17,16 +17,10 @@
 set -eEuo pipefail
 
 PORT="${PORT:-8080}"
-
-RESPONSE="$(cat <<EOF
-HTTP/1.1 200 OK
-Connection: keep-alive
-
-Hello World!\r\n
-EOF
-)"
-
 echo "Listening on ${PORT}..."
-while { echo -en "$RESPONSE"; } | nc -l -s "0.0.0.0" -p "${PORT}"; do
-  echo "================================"
-done
+nc -lk -p "${PORT}" -e "./date.sh"
+
+# You can parameterize the script you run as a function of the
+# service name like this...
+# SERVICE="${K_SERVICE:-pageviews}"
+# nc -lk -p "${PORT}" -e "./$SERVICE.sh"
