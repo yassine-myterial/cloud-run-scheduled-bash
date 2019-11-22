@@ -14,4 +14,5 @@
 
 FROM bash
 COPY main.sh .
+COPY date.sh .
 ENTRYPOINT ["./main.sh"]
