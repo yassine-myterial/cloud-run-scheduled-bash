@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+gcloud services enable --project "${PROJECT_ID}" \
+  cloudbuild.googleapis.com \
+  run.googleapis.com
