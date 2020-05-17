@@ -5,6 +5,8 @@
 This is a sample repository that runs a "server" in bash that can be deployed on
 Google Cloud Run.
 
+See also [https://github.com/matti/google-cloud-run-shell](https://github.com/matti/google-cloud-run-shell) for real shell access
+
 ## Setup
 
 1.  Enable Cloud Build and Cloud Run:
