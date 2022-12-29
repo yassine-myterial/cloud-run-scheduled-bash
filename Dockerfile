@@ -12,11 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Use the official lightweight Node.js image.
-# https://hub.docker.com/_/node
+
 FROM google/cloud-sdk
-  
-FROM bash
+
 COPY main.sh .
 COPY date.sh .
 ENTRYPOINT ["./main.sh"]
