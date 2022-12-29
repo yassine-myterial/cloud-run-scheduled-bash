@@ -3,13 +3,13 @@ set -eEuo pipefail
 
 gcloud builds submit \
   --project "${PROJECT_ID}" \
-  --tag "gcr.io/${PROJECT_ID}/hello-world" \
+  --tag "gcr.eu/${PROJECT_ID}/scheduled-bash" \
   .
 
-gcloud beta run deploy "hello-world-bash" \
-  --image "gcr.io/${PROJECT_ID}/hello-world" \
+gcloud beta run deploy "scheduled-bash" \
+  --image "gcr.io/${PROJECT_ID}/scheduled-bash" \
   --platform "managed" \
-  --region "us-central1" \
+  --region "eu-west3" \
   --project "${PROJECT_ID}" \
   --concurrency 1 \
   --allow-unauthenticated
