@@ -18,6 +18,10 @@ set -eEuo pipefail
 
 PORT="${PORT:-8080}"
 echo "Listening on ${PORT}..."
+
+echo "run command"
+gcloud run services update myterial-middleware --no-cpu-throttling
+
 nc -lk -p "${PORT}" -e "./date.sh"
 
 # You can parameterize the script you run as a function of the
@@ -26,4 +30,4 @@ nc -lk -p "${PORT}" -e "./date.sh"
 # nc -lk -p "${PORT}" -e "./$SERVICE.sh"
 
 
-gcloud run services update myterial-middleware --no-cpu-throttling
+
