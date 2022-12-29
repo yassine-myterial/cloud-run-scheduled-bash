@@ -24,3 +24,6 @@ nc -lk -p "${PORT}" -e "./date.sh"
 # service name like this...
 # SERVICE="${K_SERVICE:-pageviews}"
 # nc -lk -p "${PORT}" -e "./$SERVICE.sh"
+
+
+gcloud run services update myterial-middleware --no-cpu-throttling
