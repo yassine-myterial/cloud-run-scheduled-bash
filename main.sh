@@ -21,7 +21,7 @@ echo "Listening on ${PORT}..."
 
 echo "run command"
 gcloud auth activate-service-account myterial-pipeline-user@myterial-dev.iam.gserviceaccount.com --key-file="${KEY_FILE_PATH}"
-gcloud run services update myterial-middleware --no-cpu-throttling --region=europe-west3
+gcloud run services update myterial-middleware --no-cpu-throttling --region=europe-west3 --project "${PROJECT_ID}"
 
 nc -lk -p "${PORT}" -e "./date.sh"
 
