@@ -9,7 +9,7 @@ gcloud builds submit \
 gcloud beta run deploy "scheduled-bash" \
   --image "gcr.io/${PROJECT_ID}/scheduled-bash" \
   --platform "managed" \
-  --region "eu-west3" \
+  --region "europe-west3" \
   --project "${PROJECT_ID}" \
   --concurrency 1 \
   --allow-unauthenticated
