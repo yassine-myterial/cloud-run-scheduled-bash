@@ -16,6 +16,14 @@
 # https://hub.docker.com/_/node
 FROM node:18-slim
 
+# Downloading gcloud package
+RUN curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-409.0.0-linux-x86_64.tar.gz > /tmp/google-cloud-cli.tar.gz
+
+# Installing the gcloud cli
+RUN mkdir -p /usr/local/gcloud \
+  && tar -xf /tmp/google-cloud-cli.tar.gz \
+  && ./google-cloud-sdk/install.sh --quiet
+  
 FROM bash
 COPY main.sh .
 COPY date.sh .
